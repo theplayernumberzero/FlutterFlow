@@ -34,3 +34,12 @@ DocumentReference getOtherUserRef(
       ? listOfUserRefs.last
       : listOfUserRefs.last;
 }
+
+String getOtherUserName(
+  List<String> listOfNames,
+  String authUserName,
+) {
+  return authUserName == listOfNames.first
+      ? listOfNames.last
+      : listOfNames.first;
+}

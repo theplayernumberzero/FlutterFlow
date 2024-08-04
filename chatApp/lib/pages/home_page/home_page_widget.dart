@@ -248,6 +248,26 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
+                                          if (listViewChatsRecord
+                                                  .lastMessageSeenBy
+                                                  .contains(
+                                                      currentUserReference) ==
+                                              false)
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 12.0, 0.0),
+                                              child: Container(
+                                                width: 8.0,
+                                                height: 8.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  shape: BoxShape.circle,
+                                                ),
+                                              ),
+                                            ),
                                           Text(
                                             dateTimeFormat('relative',
                                                 listViewChatsRecord.timeStamp!),
