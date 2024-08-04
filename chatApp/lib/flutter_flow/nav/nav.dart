@@ -110,6 +110,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'Settings')
               : SettingsWidget(),
+        ),
+        FFRoute(
+          name: 'chatPage',
+          path: '/chatPage',
+          builder: (context, params) => ChatPageWidget(
+            receiveChat: params.getParam(
+              'receiveChat',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['chats'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
